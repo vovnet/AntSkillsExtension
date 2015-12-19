@@ -7,14 +7,14 @@
 
 Далее необходимо зарегистрировать скил:
 
-AntSkills.registerSkill(key:String, defaultValue:Number),
+	AntSkills.registerSkill(key:String, defaultValue:Number),
 
 где: 
 
-key:String - уникальное имя скила
+	key:String - уникальное имя скила
 
-defaultValue:Number - начальное значение.
+	defaultValue:Number - начальное значение.
 
 Например:
 
-AntSkills.registerSkill("hero_attack", 25);
+	AntSkills.registerSkill("hero_attack", 25);
