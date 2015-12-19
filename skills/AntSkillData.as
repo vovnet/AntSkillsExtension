@@ -87,11 +87,12 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * Устанавливает текущий уровень скила.
 		 * @param	value Уровень скила.
 		 */
-		public function setLevel(value:int):void {
+		public function setLevel(value:int, max:Boolean = false):void {
 			if (value >= levels.length) {
 				throw new Error("Current level " + value.toString() + " is higher than the permissible " + (levels.length-1).toString() + "!");
 			} else {
 				currentLevel = value;
+				this.isMax = max;
 			}
 		}
 		
@@ -115,11 +116,13 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * Повышаем скил на один уровень.
 		 */
 		public function levelUp():void {
-			if (!isMax && currentLevel < levels.length-1) {
+			if (!isMax && currentLevel < levels.length - 1) {
 				currentLevel++;
 			} else {
 				isMax = true;
+				currentLevel = levels.length - 1;
 			}
+			trace("current level " + currentLevel.toString());
 		}
 		
 		/**

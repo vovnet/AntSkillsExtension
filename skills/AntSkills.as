@@ -2,7 +2,9 @@ package ru.antkarlov.anthill.extensions.skills {
 	import ru.antkarlov.anthill.AntCookie;
 	
 	/**
-	 * ...
+	 * Класс AntSkills позволяет удобно управлять системой скилов в игре.
+	 * 
+	 * 
 	 * @author Vladimir
 	 */
 	public class AntSkills {
@@ -96,7 +98,9 @@ package ru.antkarlov.anthill.extensions.skills {
 		public static function saveData():void {
 			var data:Object = { };
 			for each (var skill:AntSkillData in skillsList) {
-				data[skill.key] = skill.getLevel();
+				data[skill.key] = { 
+					level: skill.getLevel(), 
+					max: skill.isMaxLevel() };
 			}
 			var cookie:AntCookie = new AntCookie();
 			cookie.open(saveName);
@@ -117,7 +121,7 @@ package ru.antkarlov.anthill.extensions.skills {
 			
 			for (var key:String in data) {
 				var skill:AntSkillData = getSkill(key);
-				skill.setLevel(data[key]);
+				skill.setLevel(data[key].level, data[key].max);
 			}
 		}
 		
@@ -135,13 +139,13 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * @return	Строка.
 		 */
 		public static function toString():String {
-			var result:String = "";
+			var result:String = "--Skills--\n";
 			for each (var skill:AntSkillData in skillsList) {
-				result += skill.key + " - ";
-				result += "cur=" + skill.getCurrentValue().toString() + ", ";
-				result += skill.getPrice().toString() + "$";
-				result += " : " + skill.getValue().toString();
-				result += " (" + skill.isMaxLevel().toString() + ")\n";
+				result += "\tkey: " + skill.key + " (";
+				result += "current: " + skill.getCurrentValue().toString() + "; ";
+				result += "priceUp: " + skill.getPrice().toString() + "$; ";
+				result += "valueUp: " + skill.getValue().toString() + "; ";
+				result += "isMax: " + skill.isMaxLevel().toString() + ")\n";
 			}
 			return result;
 		}
