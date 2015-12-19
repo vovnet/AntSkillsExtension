@@ -12,16 +12,6 @@
 
 Далее необходимо зарегистрировать скил:
 
-	AntSkills.registerSkill(key:String, defaultValue:Number),
-
-где: 
-
-	key:String - уникальное имя скила
-
-	defaultValue:Number - начальное значение.
-
-Например:
-
 	AntSkills.registerSkill("hero_attack", 25); 		// скил для силы атаки героя
 	AntSkills.registerSkill("hero_speed_run", 30.4);	// скилл для скорости бега героя
 
@@ -30,3 +20,18 @@
 	AntSkills.add("hero_attack", 100, 30); // увеличивает силу до 30 за 100$
 	AntSkills.add("hero_attack", 200, 50); // увеличивает силу до 50 за 200$
 	AntSkills.add("hero_attack", 300, 80); // увеличивает силу до 80 за 300$
+
+После этого в игре можно получать данные о текущем параметре скила:
+
+	hero.attack = AntSkills.getCurrentValue("hero_attack");
+
+
+Теперь, если мы хотим сделать панель с прокачиваниями скилов, достаточно использовать несколько методов.
+
+	AntSkills.getSkillPrice("hero_attack");	// получаем стоимость прокачки
+	AntSkills.getSkillValue("hero_attack");	// получаем значение скила, которое будет после улучшения скила
+	
+Чтобы прокачать определенный скил, достаточно вызвать метод:
+
+	AntSkills.levelUp("hero_attack");
+
