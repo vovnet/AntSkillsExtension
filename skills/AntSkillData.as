@@ -100,7 +100,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * Возвращает стоимость повышения скила.
 		 * @return Стоимость.
 		 */
-		public function getPrice():Number {
+		public function getSkillPrice():Number {
 			return levels[currentLevel].price;
 		}
 		
@@ -108,7 +108,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * Возвращает параметр скила.
 		 * @return Параметр.
 		 */
-		public function getValue():Number {
+		public function getSkillValue():Number {
 			return levels[currentLevel].value;
 		}
 		

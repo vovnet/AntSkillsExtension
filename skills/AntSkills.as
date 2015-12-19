@@ -63,7 +63,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * @return		Стоимость скила.
 		 */
 		public static function getSkillPrice(key:String):Number {
-			return getSkill(key).getPrice();
+			return getSkill(key).getSkillPrice();
 		}
 		
 		/**
@@ -72,7 +72,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * @return		Значение скила.
 		 */
 		public static function getSkillValue(key:String):Number {
-			return getSkill(key).getValue();
+			return getSkill(key).getSkillValue();
 		}
 		
 		/**
@@ -152,11 +152,20 @@ package ru.antkarlov.anthill.extensions.skills {
 			for each (var skill:AntSkillData in skillsList) {
 				result += "\tkey: " + skill.key + " (";
 				result += "current: " + skill.getCurrentValue().toString() + "; ";
-				result += "priceUp: " + skill.getPrice().toString() + "$; ";
-				result += "valueUp: " + skill.getValue().toString() + "; ";
+				result += "priceUp: " + skill.getSkillPrice().toString() + "$; ";
+				result += "valueUp: " + skill.getSkillValue().toString() + "; ";
 				result += "isMax: " + skill.isMaxLevel().toString() + ")\n";
 			}
 			return result;
+		}
+		
+		/**
+		 * Возвращает список всех скилов.
+		 * Можно использовать для того, чтобы в цикле быстро пробежаться по скилам.
+		 * @return	Список всех скилов.
+		 */
+		public static function getSkillsList():Vector.<AntSkillData> {
+			return skillsList;
 		}
 		
 		
