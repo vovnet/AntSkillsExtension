@@ -62,7 +62,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * @param	key	Идентификатор скила.
 		 * @return		Стоимость скила.
 		 */
-		public static function getSkillPrice(key:String):Number {
+		public static function getNextPrice(key:String):Number {
 			return getSkill(key).getSkillPrice();
 		}
 		
@@ -71,7 +71,7 @@ package ru.antkarlov.anthill.extensions.skills {
 		 * @param	key	Идентификатор скила.
 		 * @return		Значение скила.
 		 */
-		public static function getSkillValue(key:String):Number {
+		public static function getNextValue(key:String):Number {
 			return getSkill(key).getSkillValue();
 		}
 		
