@@ -4,7 +4,7 @@ package ru.antkarlov.anthill.extensions.skills {
 	 * Класс AntSkillLevelData является контейнером для хранения необходимой
 	 * информации о ступеньке скила.
 	 * 
-	 * @author Vladimir
+	 * @author Vladimir  (vovnet@yandex.ru)
 	 */
 	public class AntSkillLevelData {
 		

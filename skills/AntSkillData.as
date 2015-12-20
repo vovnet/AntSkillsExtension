@@ -3,7 +3,7 @@ package ru.antkarlov.anthill.extensions.skills {
 	/**
 	 * Класс AntSkillData является контейнером для хранения информации о скиле
 	 * 
-	 * @author Vladimir
+	 * @author Vladimir (vovnet@yandex.ru)
 	 */
 	public class AntSkillData {
 		

@@ -5,7 +5,7 @@ package ru.antkarlov.anthill.extensions.skills {
 	 * Класс AntSkills позволяет удобно управлять системой скилов в игре.
 	 * 
 	 * 
-	 * @author Vladimir
+	 * @author Vladimir (vovnet@yandex.ru)
 	 */
 	public class AntSkills {
 		
